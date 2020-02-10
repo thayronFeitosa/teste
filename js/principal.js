@@ -36,8 +36,6 @@ for (var i = 0; i < pacientes.length; i++) {
 
 }
 
-titulo.addEventListener("click", mostraMensagen);
-
-function mostraMensagen() {
-    console.log("ola eu fui clicado!");
-}
+titulo.addEventListener("click", function() {
+    console.log("ola só posso chamar uma funcão anonima")
+});
