@@ -1,4 +1,5 @@
 var pacientes = document.querySelectorAll(".paciente");
+var titulo = document.querySelector(".titulo");
 
 
 for (var i = 0; i < pacientes.length; i++) {
@@ -33,4 +34,10 @@ for (var i = 0; i < pacientes.length; i++) {
         }
     }
 
+}
+
+titulo.addEventListener("click", mostraMensagen);
+
+function mostraMensagen() {
+    console.log("ola eu fui clicado!");
 }
