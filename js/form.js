@@ -32,28 +32,33 @@ function obterPacienteDoFormulario(form) {
 }
 
 function montaTr(paciente) {
-    var pacienteTd = document.createElement("tr");
+    var pacienteTr = document.createElement("tr");
 
-    var nomeTd = document.createElement("td");
-    var pesoTd = document.createElement("td");
-    var alturaTd = document.createElement("td");
-    var gorduraTd = document.createElement("td");
-    var imcTd = document.createElement("td");
+    pacienteTr.classList.add("paciente");
 
-    nomeTd.textContent = paciente.nome;
-    pesoTd.textContent = paciente.peso;
-    alturaTd.textContent = paciente.altura;
-    gorduraTd.textContent = paciente.gordura;
-    imcTd.textContent = paciente.imc;
+
+    var nomeTd = montaTd(paciente.nome, "info-nome");
+    var pesoTd = montaTd(paciente.peso, "info-peso");
+    var alturaTd = montaTd(paciente.altura, "info-altura");
+    var gorduraTd = montaTd(paciente.gordura, "info-gordura");
+    var imcTd = montaTd(paciente.imc, "info-imc");
+
     // A funçao appendChild adiciona um filhos ao pacienteTd
-    pacienteTd.appendChild(nomeTd);
-    pacienteTd.appendChild(pesoTd);
-    pacienteTd.appendChild(alturaTd);
-    pacienteTd.appendChild(gorduraTd);
-    pacienteTd.appendChild(imcTd);
+    pacienteTr.appendChild(nomeTd);
+    pacienteTr.appendChild(pesoTd);
+    pacienteTr.appendChild(alturaTd);
+    pacienteTr.appendChild(gorduraTd);
+    pacienteTr.appendChild(imcTd);
 
 
 
-    return pacienteTd;
+    return pacienteTr;
 
+}
+
+function montaTd(dado, classe) {
+    var td = document.createElement("td");
+    td.textContent = dado;
+    td.classList.add(classe);
+    return td;
 }
